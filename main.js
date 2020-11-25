@@ -1,4 +1,3 @@
-
 let image_Element = document.getElementById("image")
 let imagesArray = [
     "./assets/ocean-seacoast-rocks-water-87284.jpeg",
@@ -20,14 +19,13 @@ function setImageStyles(display, top, left) {
     image_Element.style.left = `${left}px`;
     image_Element.style.display = `${display}`;
     // animation styles (not finished)
-    // image_Element.style.animation = `fade 1s linear`;
-    // image_Element.style.opacity = "1";
+    image_Element.style.animation = `fade 5s linear`;
+    image_Element.style.opacity = "1";
 }
 
 function selectRandomImage() {
     let i = Math.floor(Math.random() * Math.floor(imagesArray.length));
     image_Element.src = `${imagesArray[i]}`;
-
 }
 
 function moveImage() {
@@ -49,13 +47,11 @@ function Prep() {
     document.onmousemove = function targetActivityCheck() {
         clearTimeout(timeout)
         timeout = setTimeout(function () {
-            interval = setInterval(moveImage, 4000)
-        }, 3000)
+            interval = setInterval(moveImage, 5000)
+        }, 5000)
         clearInterval(interval)
         document.getElementById('image').src = ""
         setImageStyles("none", 0, 0)
-
-
     }
 }
 
